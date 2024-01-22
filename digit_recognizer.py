@@ -85,7 +85,6 @@ with col0:
         drawing_mode="freedraw",
         update_streamlit=True,
         key="canvas")
-    st.caption("Tips: Use the Dustbin icon to clear canvas, and Arrow buttons for undo/redo.")
 
 img = np.zeros(shape = (1,28,28,1))
 if canvas_result.image_data is not None:
@@ -98,6 +97,7 @@ with col1:
     st.title(f'***Your Drawing Resembles*** {"Nothing" if np.all(img == 0) else predict(img)}')
     # st.title("None" if np.all(img == 0) else predict(img))
 
+st.caption("Tips: Use the Dustbin icon to clear canvas, and Arrow buttons for undo/redo.")
 
 # if st.button('Predict'):
     # Here you would add the code to process the canvas image and make a prediction
